@@ -11,7 +11,7 @@ import dateFormat, { masks } from "dateformat";
 import { useState } from "react";
 
 type GitHubUser = {
-  avatar_url: string;
+  avatar_url: string ;
   bio: string;
   blog: string;
   company: string | null;
@@ -48,6 +48,8 @@ type GitHubUser = {
 };
 
 export default function Home() {
+
+  
   const [userName, setUserName] = useState("Dadasogithub");
 
   const { isPending, error, data, refetch } = useQuery<GitHubUser>({
@@ -95,7 +97,7 @@ export default function Home() {
                 width={200}
                 height={200}
                 className="h-25 w-20 rounded-full"
-                src={data?.avatar_url}
+                src={data?.avatar_url ?? ""}
                 alt="img"
               />
 
